@@ -122,6 +122,10 @@ h1 {
   gap: 30px;
 }
 
+.comment-container {
+  margin-top: 20px;
+}
+
 .comment-form-container {
   display: flex;
   flex-direction: row;
