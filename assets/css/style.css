@@ -1,0 +1,255 @@
+/* Paleta de Cores */
+:root {
+  --brand-color: #A82800;
+  --primary-color: #ff4500;
+  --secondary-color: #ff6347;
+  --tertiary-color: #ffcc00;
+  --background-color: #1a1a1a;
+  --background-overlay: rgba(255, 255, 255, 0.1);
+  --text-color: #ffffff;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilizando o corpo */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: var(--background-overlay);
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto 0;
+  padding: 20px 20px 0;
+  border-radius: 10px 10px 0 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.logo-text {
+  width: 150px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+}
+
+/* Estilização páina de galeria */
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--background-overlay);
+}
+
+.gallery-item {
+  display: flex;
+  justify-content: center;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery-item img {
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilização da página da foto */
+.photo-header {
+  width: 90%;
+  max-width: 900px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 40px 0 20px;
+}
+
+.photo-container {
+  width: 90%;
+  max-width: 900px;
+}
+
+.photo-container img {
+  width: 100%;
+  height: auto;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  max-width: 900px;
+  margin-top: 20px;
+  gap: 30px;
+}
+
+.comment-form-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 900px;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+#likes,
+#comments {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+#comments-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+#comments-list li {
+  background: rgba(255, 99, 71, 0.2);
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+#comment-input {
+  width: 80%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+
+/* Botõtes de ações */
+
+.btn-primary {
+  background-color: var(--brand-color);
+  font-weight: bold;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+#like-btn {
+  cursor: pointer;
+}
+
+#like-btn,
+#comment-icon {
+  color: white;
+  border: none;
+  font-size: 18px;
+  margin-right: 5px;
+  transition: color 0.3s;
+}
+
+#like-btn:hover {
+  color: var(--secondary-color);
+}
+
+.fire-gradient {
+  background: linear-gradient(45deg, var(--brand-color), var(--secondary-color), var(--tertiary-color), var(--primary-color));
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fireEffect 2s infinite linear;
+}
+
+@keyframes fireEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: var(--background-overlay);
+  border-radius: 0 0 10px 10px;
+  background-color: var(--background-overlay);
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+}
+
+.photo-footer {
+  width: 90%;
+  max-width: 900px;
+}
+
+.logo {
+  width: 150px;
+}
+
+/* Telas menores */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #gallery {
+    width: 90%;
+  }
+
+  .logo {
+    width: 100px;
+  }
+}
