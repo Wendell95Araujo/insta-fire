@@ -87,6 +87,7 @@ h1 {
   width: 400px;
   max-width: 90%;
   text-align: center;
+  margin: 0 auto;
 }
 
 .modal-content h2 {
