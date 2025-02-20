@@ -15,9 +15,33 @@
   <script src="assets/js/firebase-config.js"></script>
 </head>
 <body>
+  <div id="login-modal" class="modal">
+    <form id="login-form">
+      <div class="modal-content">
+        <h2>Login (Simulação)</h2>
+        <p>Esse login é apenas uma simulação. Você pode inserir qualquer senha.</p>
+        <p>Após o login, seu nome de usuário será exibido nos novos comentários.</p>
+        <div class="input-container">
+          <label for="username">Nome de Usuário:</label>
+          <input type="text" id="username" placeholder="Digite seu usuário (sem espaços)">
+        </div>
+        <div class="input-container">
+          <label for="password">Senha:</label>
+          <input type="password" id="password" placeholder="Digite qualquer senha">
+        </div>
+        <button type="submit" id="login-btn">Entrar</button>
+        <button type="button" id="close-modal">Fechar</button>
+      </div>
+    </form>
+  </div>
+
   <header>
-      <img src="assets/img/logo-text.webp" alt="Logo texto InstaFire" class="logo-text">
-    <h1>Paisagens</h1>
+    <img src="assets/img/logo-text.webp" alt="Logo texto InstaFire" class="logo-text">
+    <div class="header-content">
+      <h1>Paisagens</h1>
+      <button id="login" class="btn-primary"><i class="fa-solid fa-user"></i> Login</button>
+      <button id="logout" class="btn-primary"><i class="fa-solid fa-sign-out"></i> Logout</button>
+    </div>
   </header>
 
   <div id="gallery"></div>
@@ -27,5 +51,6 @@
   </footer>
   
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/login.js"></script>
 </body>
 </html>

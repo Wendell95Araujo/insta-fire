@@ -48,10 +48,11 @@ $(document).ready(() => {
 
   async function commentSubmit() {
     const commentText = $("#comment-input").val();
+    const username = localStorage.getItem("username");
     if (!commentText) return;
 
     const newComment = {
-      user: "Anônimo",
+      user: username ?? "Anônimo",
       text: commentText,
       timestamp: new Date().toISOString(),
     };
