@@ -7,10 +7,8 @@ $(document).ready(() => {
   const postRef = db.collection("posts").doc(postId);
   const localStorageKey = `liked_${postId}`;
 
-  // Verifica se o usuário já curtiu
   let isLiked = localStorage.getItem(localStorageKey) === "true";
-
-  // Atualizar em tempo real
+ 
   postRef.onSnapshot((doc) => {
     if (!doc.exists) {
       alert("Foto não encontrada!");
@@ -22,15 +20,13 @@ $(document).ready(() => {
     $("#photo").attr("src", imageUrl);
     $("#likes").text(data.likes || 0);
     $("#comments").text(data.comments?.length || 0);
-
-    // Exibir se já está curtido
+   
     if (isLiked) {
       $("#like-btn").addClass("fire-gradient");
     } else {
       $("#like-btn").removeClass("fire-gradient");
     }
-
-    // Atualizar lista de comentários
+   
     const commentsList = $("#comments-list").empty();
     $.each(data.comments || [], (index, comment) => {
       commentsList.append(
@@ -38,17 +34,15 @@ $(document).ready(() => {
       );
     });
   });
-
-  // Alternar curtida (curtir/descurtir)
+ 
   $("#like-btn").click(async () => {
     isLiked = !isLiked;
-    localStorage.setItem(localStorageKey, isLiked); // Salva no localStorage
+    localStorage.setItem(localStorageKey, isLiked);
 
     await postRef.update({
       likes: firebase.firestore.FieldValue.increment(isLiked ? 1 : -1),
     });
-
-    // Atualiza a cor do ícone
+   
     $("#like-btn i").toggleClass("fire-gradient", isLiked);
   });
 
@@ -68,7 +62,7 @@ $(document).ready(() => {
 
     $("#comment-input").val("");
   }
-  // Adicionar comentário
+ 
   $("#comment-form").submit((event) => {
     event.preventDefault();
     commentSubmit();

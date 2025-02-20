@@ -4,6 +4,8 @@ $(document).ready(() => {
 
   for (let i = 1; i <= totalImages; i++) {
     const imageUrl = `assets/img/${i}.webp`;
+    const localStorageKey = `liked_${i}`;
+    let isLiked = localStorage.getItem(localStorageKey) === "true";
 
     const postRef = firebase.firestore().collection("posts").doc(String(i));
     postRef.get().then((doc) => {
@@ -11,12 +13,13 @@ $(document).ready(() => {
       const likes = data.likes || 0;
       const comments = data.comments?.length || 0;
 
+
       galleryContainer.append(`
         <div class="gallery-item">
           <img src="${imageUrl}" alt="Foto ${i}" class="gallery-img" onclick="window.location.href = 'photo.html?id=${i}'">
           <div class="image-overlay">
-            <span><i class="fas fa-fire"></i> ${likes}</span>
-            <span><i class="far fa-comment"></i> ${comments}</span>
+            <span><i class="fas fa-fire ${isLiked ? 'fire-gradient' : ''}" title="Curtidas"></i> ${likes}</span>
+            <span><i class="far fa-comment" title="Comentários"></i> ${comments}</span>
           </div>
         </div>
       `);
