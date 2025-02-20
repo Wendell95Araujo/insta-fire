@@ -13,7 +13,7 @@ $(document).ready(() => {
 
       galleryContainer.append(`
         <div class="gallery-item">
-          <img src="${imageUrl}" alt="Foto ${i}" data-id="${i}" class="gallery-img">
+          <img src="${imageUrl}" alt="Foto ${i}" class="gallery-img" onclick="window.location.href = 'photo.html?id=${i}'">
           <div class="image-overlay">
             <span><i class="fas fa-fire"></i> ${likes}</span>
             <span><i class="far fa-comment"></i> ${comments}</span>
@@ -22,10 +22,4 @@ $(document).ready(() => {
       `);
     });
   }
-
-  // Ao clicar, redireciona para a página de visualização
-  $(".gallery-img").click(function () {
-    const imageId = $(this).data("id");
-    window.location.href = `photo.html?id=${imageId}`;
-  });
 });
