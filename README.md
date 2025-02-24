@@ -41,7 +41,7 @@ InstaFire/
 │   ├── js/
 │   │   ├── firebase-config.js  # Configuração do Firebase
 │   │   ├── main.js  # Lógica para carregar a galeria de fotos
-│   │   ├── photo.js  # Lógica para curtir e comentar fotos
+│   │   └── photo.js  # Lógica para curtir e comentar fotos
 │   ├── img/
 │   │   ├── 1.webp
 │   │   ├── 2.webp
