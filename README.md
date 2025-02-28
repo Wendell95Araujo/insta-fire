@@ -6,7 +6,7 @@ O **InstaFire** é uma aplicação inspirada no feed do Instagram, permitindo qu
 
 ## 🚀 Motivação do Nome
 
-O nome *InstaFire* combina a ideia de imagens instantâneas (*Insta*) com o conceito de algo vibrante e dinâmico (*Fire*), refletindo a energia e interação do aplicativo.
+O nome *InstaFire* combina a ideia de imagens instantâneas (*Insta*) com o conceito de algo vibrante e dinâmico, também por utilizar recursos do Firebase (*Fire*), refletindo a energia e interação do aplicativo.
 
 ## 🖼️ Funcionalidades
 
